@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Space Invaders Home</title>
+    <title>Game Over</title>
     <style>
         body {
             display: flex;
@@ -18,17 +18,21 @@
         .container {
             text-align: center;
         }
+        .score {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
         .button {
-            display: block;
-            width: 200px;
-            margin: 20px auto;
-            padding: 15px;
+            display: inline-block;
+            padding: 10px 20px;
             background-color: white;
             color: black;
-            text-align: center;
+            border: none;
+            cursor: pointer;
             border-radius: 5px;
             text-decoration: none;
-            font-size: 18px;
+            font-size: 16px;
+            margin-top: 20px;
         }
         .button:hover {
             background-color: grey;
@@ -38,10 +42,18 @@
 </head>
 <body>
     <div class="container">
-        <h1>Welcome to Space Invaders</h1>
-        <a href="easy.html" class="button">Easy</a>
-        <a href="med.html" class="button">Medium</a>
-        <a href="hard.html" class="button">Hard</a>
+        <div class="score">Final Score: <span id="finalScore"></span></div>
+        <button class="button" onclick="redirectToHome()">Go Home</button>
     </div>
+    <script>
+        // Retrieve the score from the query parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const score = urlParams.get('score');
+        document.getElementById('finalScore').textContent = score;
+
+        function redirectToHome() {
+            window.location.href = 'index.html';
+        }
+    </script>
 </body>
 </html>
