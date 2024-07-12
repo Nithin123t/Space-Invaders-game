@@ -14,7 +14,7 @@ const ENEMY_SIZE = 30;
 const BULLET_SIZE = 5;
 const ENEMY_SPEED = 6;  // Easy level speed
 const BULLET_SPEED = 7;  // Easy level speed
-const PLAYER_SPEED = 10;
+const PLAYER_SPEED = 12;
 
 let playerX = canvas.width / 2 - PLAYER_SIZE / 2;
 let playerY = canvas.height - PLAYER_SIZE - 10;
